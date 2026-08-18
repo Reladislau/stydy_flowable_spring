@@ -1,0 +1,4 @@
+{
+  "name": "Java 17 Spring Boot",
+  "image": "mcr.microsoft.com/devcontainers/java:17"
+}
