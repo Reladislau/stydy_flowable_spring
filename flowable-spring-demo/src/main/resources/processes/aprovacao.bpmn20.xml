@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:flowable="http://flowable.org/bpmn"
+             targetNamespace="http://www.flowable.org/processdef">
+
+    <process id="processoAprovacao" name="Processo de Aprovação" isExecutable="true">
+
+        <startEvent id="inicio" name="Início" />
+
+        <sequenceFlow sourceRef="inicio" targetRef="tarefaAprovar" />
+
+        <userTask id="tarefaAprovar" name="Aprovar Solicitação" flowable:assignee="gestor" />
+
+        <sequenceFlow sourceRef="tarefaAprovar" targetRef="fim" />
+
+        <endEvent id="fim" name="Fim" />
+
+    </process>
+
+</definitions>
