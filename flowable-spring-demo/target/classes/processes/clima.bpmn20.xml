@@ -4,7 +4,7 @@
              xmlns:flowable="http://flowable.org/bpmn"
              targetNamespace="Examples">
 
-  <process id="processoClima" name="Weather Process" isExecutable="true">
+  <process id="processoClima" name="Processo de Clima" isExecutable="true">
     <startEvent id="startEvent" name="Start"/>
     <serviceTask id="fetchWeatherTask"
                  name="Fetch Weather"
