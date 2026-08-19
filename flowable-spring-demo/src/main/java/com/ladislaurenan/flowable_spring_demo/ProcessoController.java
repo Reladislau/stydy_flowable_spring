@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @RestController
@@ -19,11 +20,14 @@ public class ProcessoController {
     @Autowired
     private TaskService taskService;
 
-    @PostMapping("/iniciar")
-    public String iniciar() {
-        runtimeService.startProcessInstanceByKey("processoAprovacao");
-        return "Processo iniciado com sucesso!";
+    @PostMapping("/{key}/iniciar")
+    public String iniciar(@PathVariable String key) {
+        runtimeService.startProcessInstanceByKey(key);
+        return "Processo '" + key + "' iniciado com sucesso!";
     }
+
+    // @PostMapping("/inicarProcesso2")
+    // public String
 
     @GetMapping("/tarefas")
     public List<String> listarTarefas() {
@@ -38,4 +42,5 @@ public class ProcessoController {
         taskService.complete(id);
         return "Tarefa " + id + " concluída!";
     }
+
 }

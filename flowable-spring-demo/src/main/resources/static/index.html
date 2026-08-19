@@ -61,8 +61,11 @@
     <h1>Teste - Processo de Aprovação</h1>
 
     <button onclick="iniciarProcesso()">Iniciar Processo</button>
+    <button onclick="processoCancelamento()">Canelamento do Processo</button>
+
     <div id="status"></div>
 
+    
     <h2>Tarefas Pendentes</h2>
     <div id="listaTarefas"></div>
 
@@ -71,12 +74,25 @@
         const status = document.getElementById('status');
         status.textContent = 'Iniciando...';
         try {
-            const resposta = await fetch('/processo/iniciar', { method: 'POST' });
+            const resposta = await fetch('/processo/processoAprovacao/iniciar', { method: 'POST' });
             const texto = await resposta.text();
             status.textContent = texto;
             carregarTarefas();
         } catch (erro) {
             status.textContent = 'Erro ao iniciar processo: ' + erro;
+        }
+    }
+
+    async function processoCancelamento(){
+        const status = document.getElementById('status');
+        status.textContent = "Iniciando...";
+        try {
+            const resposta = await fetch('/processo/processoCancelamento/iniciar', { method: 'POST' });
+            const texto = await resposta.text();
+            status.textContent = texto;
+            carregarTarefas();
+        } catch (error) {
+            status.textContent = 'Erro ao iniciar o processo de cancelamento' + error;
         }
     }
 

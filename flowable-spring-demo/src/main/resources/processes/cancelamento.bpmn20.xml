@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:flowable="http://flowable.org/bpmn"
+             targetNamespace="http://www.exemplo.com">
+
+  <process id="processoCancelamento" name="Processo de Cancelamento" isExecutable="true">
+    <startEvent id="inicio" />
+    <sequenceFlow sourceRef="inicio" targetRef="tarefaConfirmar" />
+
+    <userTask id="tarefaConfirmar" name="Confirmar cancelamento" />
+    <sequenceFlow sourceRef="tarefaConfirmar" targetRef="fim" />
+
+    <endEvent id="fim" />
+  </process>
+</definitions>
