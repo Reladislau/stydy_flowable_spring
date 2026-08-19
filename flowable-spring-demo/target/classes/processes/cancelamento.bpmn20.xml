@@ -7,7 +7,7 @@
     <startEvent id="inicio" />
     <sequenceFlow sourceRef="inicio" targetRef="tarefaConfirmar" />
 
-    <userTask id="tarefaConfirmar" name="Confirmar cancelamento" />
+    <userTask id="tarefaConfirmar" name="Confirmar cancelamento" flowable:assignee="gestor"/>
     <sequenceFlow sourceRef="tarefaConfirmar" targetRef="fim" />
 
     <endEvent id="fim" />

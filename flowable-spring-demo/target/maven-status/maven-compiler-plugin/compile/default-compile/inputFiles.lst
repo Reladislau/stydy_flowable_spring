@@ -1,2 +1,4 @@
+/workspaces/stydy_flowable_spring/flowable-spring-demo/src/main/java/com/ladislaurenan/flowable_spring_demo/AppConfig.java
 /workspaces/stydy_flowable_spring/flowable-spring-demo/src/main/java/com/ladislaurenan/flowable_spring_demo/FlowableSpringDemoApplication.java
 /workspaces/stydy_flowable_spring/flowable-spring-demo/src/main/java/com/ladislaurenan/flowable_spring_demo/ProcessoController.java
+/workspaces/stydy_flowable_spring/flowable-spring-demo/src/main/java/com/ladislaurenan/flowable_spring_demo/delegates/WeatherDelegate.java

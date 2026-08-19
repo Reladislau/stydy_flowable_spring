@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:flowable="http://flowable.org/bpmn"
+             targetNamespace="Examples">
+
+  <process id="processoClima" name="Weather Process" isExecutable="true">
+    <startEvent id="startEvent" name="Start"/>
+    <serviceTask id="fetchWeatherTask"
+                 name="Fetch Weather"
+                 flowable:delegateExpression="${weatherDelegate}"/>
+    <endEvent id="endEvent" name="End"/>
+
+    <sequenceFlow id="flow1" sourceRef="startEvent" targetRef="fetchWeatherTask"/>
+    <sequenceFlow id="flow2" sourceRef="fetchWeatherTask" targetRef="endEvent"/>
+  </process>
+</definitions>
